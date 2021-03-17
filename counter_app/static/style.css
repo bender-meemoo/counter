@@ -1,0 +1,11 @@
+body {
+    background-color: #009FB7;
+}
+
+.card {
+    margin: 20%;
+    background-color: #FED766;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #FE4A49;
+}

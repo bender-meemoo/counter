@@ -3,19 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit="no">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Counter</title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>Counter</h1>
+    <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Counter</h4>
+          <p class="card-text">
+            Counter number {{request.session.visitcount}}
+          </p >
+          <form action="/cheat" method="POST">
+            {% csrf_token %}
+         <p class="card-text">Wanna cheat loser? <input type="number" name="number"></p>
+         <input class="btn btn-primary" type="submit" value="Cheater?">
+        </form>
+        <p class="card-text">
+            Plus duex?
+          </p >
+          <form action="/duex">
+            <a href="/duex" class="btn btn-primary">Ready for the Duex?</a>
+        </form>
+        <p class="card-text">
+            Destroy data?
+          </p >
+          <a href="/destroy_session"" class="btn btn-primary">aLL YOU'Re BaSE BELONG TO us!</a>
+        </div>
+      </div>
+
+    <!-- <h1>Counter</h1>
     <br>
     <br>
     <p>Counter number {{request.session.visitcount}}</p>
     <br>
+    <form action="/cheat" method="POST">
+        {% csrf_token %}
+        <p>Wanna cheat loser? <input type="number" name="number" placeholder={{request.session.visitcount}}></p>
+        <input type="submit" value="Cheater?" />
+    </form>
+    <br>
+    <p>Plus duex?</p>
+    <form action="/duex">
+        <input type="submit" value="Ready fro the Duex?" />
+    </form> -->
+    <!-- <br>
     <br>
     <p>Destroy data?</p>
     <a href="/destroy_session">
         <button>aLL YOU'Re BaSE BELONG TO us!</button>
-    </a>
+    </a> -->
 </body>
 </html>
